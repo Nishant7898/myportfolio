@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const skills = ["Frontend Developer", "React Enthusiast", "UI/UX Builder"];
 
-const Tiltedtext = () => {
+const TiltedText = () => {
   return (
     <div className="py-[150px] sm:py-[200px] md:py-[280px] px-6 sm:px-10 md:px-[80px]">
       <motion.span
@@ -47,4 +47,4 @@ const Tiltedtext = () => {
   );
 };
 
-export default Tiltedtext;
+export default TiltedText;
