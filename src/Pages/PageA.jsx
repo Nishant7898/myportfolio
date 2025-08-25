@@ -3,7 +3,7 @@ import photo from "../assets/bg.jpg";
 import TiltedText from "../Components/TiltedText";
 import { motion } from "framer-motion";
 
-const Page1 = () => {
+const PageA = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -26,4 +26,4 @@ const Page1 = () => {
   );
 };
 
-export default Page1;
+export default PageA;

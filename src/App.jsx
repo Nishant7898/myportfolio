@@ -1,16 +1,16 @@
 import React from "react";
-import Page1 from "./Pages/page1";
-import Page2 from "./Pages/Page2";
-import Page3 from "./Pages/Page3";
+import PageA from "./Pages/PageA";
+import PageB from "./Pages/PageB";
+import PageC from "./Pages/pageC";
 import Header from "./Components/Header";
 
 const App = () => {
   return (
     <>
       <Header />
-      <Page1 />
-      <Page2 />
-      <Page3 />
+      <PageA />
+      <PageB />
+      <PageC />
     </>
   );
 };

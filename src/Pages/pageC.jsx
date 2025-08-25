@@ -2,7 +2,7 @@ import React from "react";
 
 import Skills from "../Components/Skills";
 
-const Page3 = () => {
+const PageC = () => {
   return (
     <div className="h-screen px-5 bg-white ">
       
@@ -13,4 +13,4 @@ const Page3 = () => {
   );
 };
 
-export default Page3;
+export default PageC;

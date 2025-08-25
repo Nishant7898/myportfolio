@@ -1,7 +1,7 @@
 import React from 'react';
 import AboutMe from '../Components/aboutme';
 
-const Page2 = () => {
+const PageB = () => {
   return (
     <div className='h-1/2 px-10   py-10'>
         <AboutMe/>
@@ -10,4 +10,4 @@ const Page2 = () => {
   );
 }
 
-export default Page2;
+export default PageB;
