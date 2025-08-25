@@ -1,5 +1,5 @@
 import React from "react";
-import SkillsSection from "../Components/Skills";
+
 import Skills from "../Components/Skills";
 
 const Page3 = () => {
