@@ -1,6 +1,6 @@
 import React from "react";
 import photo from "../assets/bg.jpg";
-import Tiltedtext from "../Components/TiltedText";
+import TiltedText from "../Components/TiltedText";
 import { motion } from "framer-motion";
 
 const Page1 = () => {
@@ -20,7 +20,7 @@ const Page1 = () => {
         }}
         className=" rounded-[50px] shadow-gray-600 shadow-xl h-full w-full"
       >
-     <Tiltedtext/>
+     <TiltedText/>
       </div>
     </motion.div>
   );
