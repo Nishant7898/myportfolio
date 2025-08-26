@@ -1,9 +1,9 @@
 import React from "react";
-import PageA from "./pages/pageA";
-import PageB from "./pages/pageB";
-import PageC from "./pages/pageC";
+import PageA from "./Pages/pageA";
+import PageB from "./Pages/pageB";
+import PageC from "./Pages/pageC";
 
-import Hire from "./components/hire";
+import Hire from "./Components/hire";
 
 const App = () => {
   return (
