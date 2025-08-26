@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutMe from '../Components/aboutme';
+import AboutMe from '../Components/AboutMe';
 
 const PageB = () => {
   return (
