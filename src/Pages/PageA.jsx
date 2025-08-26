@@ -1,6 +1,6 @@
 import React from "react";
 import photo from "../assets/bg.png";
-import TiltedText from "../components/tiltedText";
+import TiltedText from "../Components/Tiltedtext"
 import { motion } from "framer-motion";
 
 const PageA = () => {

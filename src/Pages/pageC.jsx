@@ -1,6 +1,6 @@
 import React from "react";
 
-import Skills from "../components/skills";
+import Skills from "../Components/Skills";
 
 const PageC = () => {
   return (
