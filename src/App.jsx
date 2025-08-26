@@ -1,5 +1,5 @@
 import React from "react";
-import PageA from "./pages/PageA";
+import PageA from "./pages/pageA";
 import PageB from "./pages/pageB";
 import PageC from "./pages/pageC";
 
