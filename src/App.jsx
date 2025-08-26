@@ -1,7 +1,7 @@
 import React from "react";
-import PageA from "./Pages/PageA";
-import PageB from "./Pages/PageB";
-import PageC from "./Pages/PageC";
+import PageA from "./Pages/PageA.jsx";
+import PageB from "./Pages/PageB.jsx";
+import PageC from "./Pages/PageC.jsx";
 
 import Hire from "./Components/Hire";
 
