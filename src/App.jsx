@@ -7,7 +7,7 @@ import Hire from "./Components/Hire";
 
 const App = () => {
   return (
-    <>
+    <> 
       <Hire />
       <PageA />
       <PageB />

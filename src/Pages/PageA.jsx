@@ -1,5 +1,5 @@
 import React from "react";
-import photo from "../assets/bg.jpg";
+import photo from "../assets/bg.png";
 import TiltedText from "../Components/TiltedText";
 import { motion } from "framer-motion";
 
