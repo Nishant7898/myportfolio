@@ -4,6 +4,7 @@ import PageB from "./Pages/PageB.jsx";
 import PageC from "./Pages/pageC.jsx";
 
 import Hire from "./Components/Hire";
+import PageD from "./Pages/PageD.jsx";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <PageA />
       <PageB />
       <PageC />
+      <PageD/>
     </>
   );
 };
