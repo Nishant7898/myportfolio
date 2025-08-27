@@ -14,10 +14,11 @@ const PageA = () => {
 
         {/* Image always on right */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            whileHover={{ scale: 1.05 }}
           className="flex-1"
           style={{
             backgroundImage: `url(${bgphoto})`,

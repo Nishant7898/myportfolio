@@ -110,7 +110,7 @@ const getLevelColor = (level) => {
 
 const Skills = () => {
   return (
-    <div className="bg-black rounded-xl  sm:rounded-2xl md:rounded-3xl lg:rounded-[50px] px-4 sm:px-6 md:px-10 lg:px-20 py-6 sm:py-8 md:py-12">
+    <div className="bg-black rounded-xl  sm:rounded-2xl md:rounded-3xl lg:rounded-[50px] px-4 sm:px-6 md:px-10 lg:px-20 py-2 sm:py-8 md:py-12">
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -134,21 +134,13 @@ const Skills = () => {
       <div className="grid grid-cols-2 font-iceland sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 lg:gap-8 place-items-center">
         {icons.map((skill, index) => (
           <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: index * 0.1,
-              type: "spring",
-              stiffness: 100,
-            }}
-            whileHover={{
-              scale: 1.05,
-              y: -5,
-              transition: { duration: 0.2 },
-            }}
-            viewport={{ once: true, amount: 0.2 }}
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            whileHover={{ scale: 1.05 }}
+          
+          
             className={`bg-[#0f0f0f] border border-gray-800 hover:border-${skill.color}-500/50 
                        text-white hover:shadow-lg hover:shadow-${skill.color}-500/20 
                        flex flex-col gap-2 sm:gap-3 md:gap-4 items-center justify-center 

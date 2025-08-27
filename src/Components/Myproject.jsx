@@ -31,8 +31,13 @@ const Cube = ({ images }) => {
     <mesh rotation={[0.4, 0.2, 0]}>
       <boxGeometry args={[4, 4, 4]} />
       {textures.map((tex, i) => (
-        <meshStandardMaterial key={i} attach={`material-${i}`} map={tex}
-        emissive={"cream"} emissiveIntensity={0.05} />
+        <meshStandardMaterial
+          key={i}
+          attach={`material-${i}`}
+          map={tex}
+          emissive={"cream"}
+          emissiveIntensity={0.05}
+        />
       ))}
     </mesh>
   );
@@ -48,7 +53,7 @@ const projects = [
   },
   {
     title: "Food-Store",
-    description: "Full-stack MERN food delivery app with cart & payments.",
+    description: " Food delivery app with cart & payments.",
     tech: ["React", "Tailwind"],
     img: [G, H, I, J], // ✅ will auto-repeat to 6
   },
@@ -64,13 +69,26 @@ const projects = [
 const MyProject = () => {
   return (
     <section className="py-20 px-10 bg-gradient-to-b from-black via-gray-900 to-black text-white">
-      <h2 className="text-5xl font-bold text-center mb-12">🚀 My Projects</h2>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-5xl md:w-full w-[300px] font-bold items-center font-black-ops-one-regular text-center mb-12"
+      >
+        {" "}
+        My Projects
+      </motion.h2>
 
       {/* Responsive Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, i) => (
           <motion.div
             key={i}
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
             whileHover={{ scale: 1.05 }}
             className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col"
           >
@@ -86,13 +104,17 @@ const MyProject = () => {
 
             {/* Project Info */}
             <div className="p-6">
-              <h3 className="text-2xl font-semibold">{project.title}</h3>
-              <p className="text-gray-400 mt-2">{project.description}</p>
+              <h3 className="text-2xl font-iceland font-semibold">
+                {project.title}
+              </h3>
+              <p className="text-gray-400 font-lexend-exa mt-2">
+                {project.description}
+              </p>
               <div className="flex flex-wrap gap-2 mt-3">
                 {project.tech.map((t, idx) => (
-                  <span
+                  <span 
                     key={idx}
-                    className="px-3 py-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full text-sm"
+                    className="px-3 font-pt-serif-caption-regular py-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full text-sm"
                   >
                     {t}
                   </span>

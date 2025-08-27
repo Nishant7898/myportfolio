@@ -4,12 +4,13 @@ import Skills from "../Components/Skills";
 
 const PageC = () => {
   return (
-    <div className="h-screen px-2 bg-white ">
+    <>
+    <div className="h-[45rem] px-2 bg-white ">
       
-      <div className=" ">
-        <Skills />
-      </div>
+   <Skills/>
+      
     </div>
+    </>
   );
 };
 
