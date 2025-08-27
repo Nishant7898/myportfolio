@@ -16,6 +16,9 @@ import G from "../assets/Projectimage/project2a.png";
 import H from "../assets/Projectimage/project2b.png";
 import I from "../assets/Projectimage/project2d.png";
 import J from "../assets/Projectimage/project2e.png";
+import K from "../assets/Projectimage/project3f.png"
+import L from "../assets/Projectimage/project3g.png"
+import M from "../assets/Projectimage/project3h.png"
 
 // ✅ Cube component with images
 const Cube = ({ images }) => {
@@ -61,7 +64,7 @@ const projects = [
     title: "Weather App",
     description: "Fetches real-time weather using OpenWeather API.",
     tech: ["React", "API", "Tailwind"],
-    img: [A, B, C], // ✅ reuses until 6 faces filled
+    img: [K,L,M], // ✅ reuses until 6 faces filled
   },
 ];
 
