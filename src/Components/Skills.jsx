@@ -14,88 +14,171 @@ import { SiNetlify } from "react-icons/si";
 
 const icons = [
   {
-    name: "Reactjs",
-    icon: <FaReact className="text-sky-500 text-7xl animate-spin " />,
+    name: "React.js",
+    icon: (
+      <FaReact className="text-sky-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-spin [animation-duration:3s]" />
+    ),
     level: "Intermediate",
+    color: "sky",
   },
   {
     name: "JavaScript",
-    icon: <IoLogoJavascript className="text-yellow-500 text-7xl animate-pulse" />,
+    icon: (
+      <IoLogoJavascript className="text-yellow-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-pulse" />
+    ),
     level: "Intermediate",
+    color: "yellow",
   },
   {
     name: "Redux",
-    icon: <TbBrandRedux className="text-blue-500 text-7xl animate-wiggle" />,
+    icon: (
+      <TbBrandRedux className="text-purple-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl hover:animate-bounce" />
+    ),
     level: "Intermediate",
+    color: "purple",
   },
   {
-    name: "TailwindCss",
-    icon: <RiTailwindCssFill className="text-sky-500 text-7xl animate-fade-in" />,
+    name: "Tailwind CSS",
+    icon: (
+      <RiTailwindCssFill className="text-cyan-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl" />
+    ),
     level: "Intermediate",
+    color: "cyan",
   },
   {
-    name: "HTML",
-    icon: <TiHtml5 className="text-blue-500 text-7xl" />,
-    level: "Intermediate",
+    name: "HTML5",
+    icon: (
+      <TiHtml5 className="text-orange-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl" />
+    ),
+    level: "Advanced",
+    color: "orange",
   },
   {
-    name: "Css",
-    icon: <BsFiletypeCss className="text-blue-500 text-7xl" />,
-    level: "Intermediate",
+    name: "CSS3",
+    icon: (
+      <BsFiletypeCss className="text-blue-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl" />
+    ),
+    level: "Advanced",
+    color: "blue",
   },
   {
-    name: "Github",
-    icon: <FaGithub className="text-black-500 text-7xl" />,
+    name: "GitHub",
+    icon: (
+      <FaGithub className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl" />
+    ),
     level: "Intermediate",
+    color: "gray",
   },
   {
     name: "Netlify",
-    icon: <SiNetlify className="text-gray-500 text-7xl" />,
+    icon: (
+      <SiNetlify className="text-teal-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl" />
+    ),
     level: "Intermediate",
+    color: "teal",
   },
   {
-    name: "Threejs",
-    icon: <TbBrandThreejs className="text-7xl" />,
+    name: "Three.js",
+    icon: (
+      <TbBrandThreejs className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl" />
+    ),
     level: "Beginner",
+    color: "gray",
   },
   {
     name: "Framer Motion",
-    icon: <TbBrandFramerMotion className="text-gray-600 text-7xl" />,
-    level: "Beginner",
+    icon: (
+      <TbBrandFramerMotion className="text-pink-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl" />
+    ),
+    level: "Intermediate",
+    color: "pink",
   },
 ];
 
+const getLevelColor = (level) => {
+  switch (level) {
+    case "Advanced":
+      return "text-green-400";
+    case "Intermediate":
+      return "text-blue-400";
+    case "Beginner":
+      return "text-yellow-400";
+    default:
+      return "text-gray-400";
+  }
+};
+
 const Skills = () => {
   return (
-    <div className="text-2xl bg-black rounded-[50px] ">
+    <div className="bg-black rounded-xl  sm:rounded-2xl md:rounded-3xl lg:rounded-[50px] px-4 sm:px-6 md:px-10 lg:px-20 py-6 sm:py-8 md:py-12">
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center items-center py-5 text-gray-500 text-4xl font-bold"
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-center font-black-ops-one-regular py-4 sm:py-5 md:py-6 text-gray-100 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4"
       >
-        My skills
+        My Skills
       </motion.h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 py-10 place-items-center px-20 text-center gap-8">
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-center text-gray-400 font-lexend-exa text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10"
+      >
+        Technologies and tools I work with
+      </motion.p>
+
+      <div className="grid grid-cols-2 font-iceland sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 lg:gap-8 place-items-center">
         {icons.map((skill, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            className=" text-white hover:shadow-xs w-xs shadow-gray-400 flex flex-col gap-5 items-center justify-center rounded-2xl h-[150px] p-2 bg-[#0f0f0f] "
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.1,
+              type: "spring",
+              stiffness: 100,
+            }}
+            whileHover={{
+              scale: 1.05,
+              y: -5,
+              transition: { duration: 0.2 },
+            }}
+            viewport={{ once: true, amount: 0.2 }}
+            className={`bg-[#0f0f0f] border border-gray-800 hover:border-${skill.color}-500/50 
+                       text-white hover:shadow-lg hover:shadow-${skill.color}-500/20 
+                       flex flex-col gap-2 sm:gap-3 md:gap-4 items-center justify-center 
+                       rounded-lg sm:rounded-xl md:rounded-2xl 
+                       h-[100px] sm:h-[120px] md:h-[140px] lg:h-[160px] 
+                       w-full p-2 sm:p-3 md:p-4
+                       transition-all duration-300 group cursor-pointer`}
           >
-            <div>{skill.icon}</div>
-            <h2 className="font-semibold text-red-300 bottom-0">
-              {skill.name}
-            </h2>
+            <div className="transition-transform duration-300 group-hover:scale-110">
+              {skill.icon}
+            </div>
+            <div className="text-center">
+              <h3 className="font-semibold text-gray-100 text-xs sm:text-sm md:text-base lg:text-lg mb-1">
+                {skill.name}
+              </h3>
+            </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Optional: Skills Summary */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="mt-8 sm:mt-10 md:mt-12 text-center"
+      ></motion.div>
     </div>
   );
 };
 
 export default Skills;
-  

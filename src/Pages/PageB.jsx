@@ -3,7 +3,7 @@ import AboutMe from '../Components/Aboutme';
 
 const PageB = () => {
   return (
-    <div className='h-1/2 px-10   py-10'>
+    <div className='h-1/2 px-2   py-10'>
         <AboutMe/>
       
     </div>

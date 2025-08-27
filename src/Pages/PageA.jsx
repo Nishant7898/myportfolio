@@ -1,28 +1,36 @@
 import React from "react";
-import photo from "../assets/bg.png";
-import TiltedText from "../Components/Tiltedtext"
+import Tiltedtext from "../Components/Tiltedtext";
+import bgphoto from "../assets/bg.png";
 import { motion } from "framer-motion";
 
 const PageA = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.5 }}
-      className="h-screen bg-white px-8 py-5"
-    >
-      <div
-        style={{
-          backgroundImage: `url(${photo})`,
-     
-          backgroundPosition: `right center`,
-          backgroundSize: `auto`,
-        }}
-        className=" rounded-[50px] shadow-gray-600 shadow-xl h-full w-full"
-      >
-     <TiltedText/>
+    <div className="h-screen px-2 sm:px-1 md:px-10 py-6 sm:py-8 md:py-10 bg-white items-center">
+      <div className="h-full bg-black justify-between rounded-[30px] py-6 sm:py-8 md:py-10 px-4 sm:px-1 md:px-10 flex flex-row">
+        {/* Text always on left */}
+        <div className="flex-1 flex items-center">
+          <Tiltedtext />
+        </div>
+
+        {/* Image always on right */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex-1"
+          style={{
+            backgroundImage: `url(${bgphoto})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            width: "100%",
+            height: "100%",
+            borderRadius: "20px",
+          }}
+        ></motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

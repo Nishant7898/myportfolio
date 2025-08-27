@@ -1,50 +1,42 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const skills = ["Frontend Developer", "React Enthusiast", "UI/UX Builder"];
-
-const TiltedText = () => {
+const Tiltedtext = () => {
   return (
-    <div className="py-[150px] sm:py-[200px] md:py-[280px] px-6 sm:px-10 md:px-[80px]">
-      <motion.span
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="text-white justify-start font-bold gap-3 sm:gap-5 text-3xl sm:text-4xl md:text-[50px] flex flex-wrap sm:flex-nowrap items-center"
-      >
-        Hi, I Am{" "}
-        <h1 className="text-4xl sm:text-5xl md:text-[60px] uppercase font-extrabold text-red-500">
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="gap-6 flex flex-col py-10 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10"
+    >
+      <span className="flex flex-wrap items-center gap-3 mb-4 sm:mb-5">
+        <p className="text-3xl sm:text-4xl md:text-6xl mt-2 sm:mt-3 md:mt-5 w-full sm:w-[600px] md:w-[800px] font-black-ops-one-regular text-gray-400 uppercase dotted-gradient-text">
           Nishant Pathak
-        </h1>
-      </motion.span>
+        </p>
+      </span>
 
-      <motion.p
-        className="text-lg sm:text-xl md:text-2xl px-2 sm:px-6 md:px-[40px] mt-4 text-white font-semibold text-center sm:text-left"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-      >
-        I Build Modern, Responsive And User Friendly Web Experiences
-      </motion.p>
+      <p className="text-base sm:text-lg md:text-[30px] mt-3 sm:mt-4 md:mt-5 text-white w-full sm:w-[600px] md:w-[800px] font-iceland">
+        React Enthusiast | Responsive Design | UI/UX Design
+      </p>
 
-      <div className="flex flex-wrap justify-center sm:justify-start px-4 sm:px-10 md:px-20 mt-6 sm:mt-8 gap-2">
-        {skills.map((skill, index) => (
-          <motion.h2
-            className="text-lg sm:text-xl md:text-2xl text-white gap-2"
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: index * 0.5 + 1, // stagger effect
-            }}
-          >
-            | {skill} |
-          </motion.h2>
-        ))}
-      </div>
-    </div>
+      <span className="flex flex-wrap gap-3 sm:gap-4 md:gap-5 mt-10 sm:mt-14 md:mt-20 font-lexend-exa ml-0 sm:ml-10 md:ml-20">
+        <button
+          className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500
+                     px-4 sm:px-5 md:px-6 py-2 sm:py-3 rounded-full text-white font-semibold text-sm sm:text-base md:text-lg"
+        >
+          View My Project
+        </button>
+
+        <button
+          className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500
+                     px-4 sm:px-5 md:px-6 py-2 sm:py-3 rounded-full text-white font-semibold text-sm sm:text-base md:text-lg"
+        >
+          Contact Me!
+        </button>
+      </span>
+    </motion.div>
   );
 };
 
-export default TiltedText;
+export default Tiltedtext;
