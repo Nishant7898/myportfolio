@@ -110,7 +110,7 @@ const getLevelColor = (level) => {
 
 const Skills = () => {
   return (
-    <div className="bg-black rounded-xl  sm:rounded-2xl md:rounded-3xl lg:rounded-[50px] px-4 sm:px-6 md:px-10 lg:px-20 py-2 sm:py-8 md:py-12">
+    <div className="bg-black rounded-3xl  sm:rounded-2xl md:rounded-3xl lg:rounded-[50px] px-4 sm:px-6 md:px-10 lg:px-20 py-2 sm:py-8 md:py-12">
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -134,6 +134,7 @@ const Skills = () => {
       <div className="grid grid-cols-2 font-iceland sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 lg:gap-8 place-items-center">
         {icons.map((skill, index) => (
           <motion.div
+          key={index}
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}

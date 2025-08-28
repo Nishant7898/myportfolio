@@ -79,7 +79,7 @@ const projects = [
 // --- Main Component ---
 const MyProject = () => {
   return (
-    <section className="py-10 px-10 bg-black text-white">
+    <section className="py-5 px-10 bg-black md:rounded-3xl rounded-3xl  text-white">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

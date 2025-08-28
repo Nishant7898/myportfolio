@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const AboutMe = () => {
   return (
-    <section className="bg-[#0f0f0f] rounded-2xl sm:rounded-3xl md:rounded-[50px] text-white py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-2 md:px-10 lg:px-20">
+    <section className="bg-[#0f0f0f] rounded-3xl sm:rounded-3xl md:rounded-[50px] text-white py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-2 md:px-10 lg:px-20">
       <div
      
         className="max-w-6xl mx-auto text-center"

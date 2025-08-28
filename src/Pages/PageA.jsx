@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const PageA = () => {
   return (
     <div className="h-screen px-2 sm:px-1 md:px-2 py-6 sm:py-8 md:py-10 bg-white items-center">
-      <div className="h-full bg-black justify-between rounded-[30px] py-6 sm:py-8 md:py-10 px-4 sm:px-1 md:px-10 flex flex-row">
+      <div className="h-full bg-black justify-between rounded-3xl py-6 sm:py-8 md:py-10 px-4 sm:px-1 md:px-10 flex flex-row">
         {/* Text always on left */}
         <div className="flex-1 flex items-center">
           <Tiltedtext />
