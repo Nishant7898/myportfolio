@@ -95,18 +95,7 @@ const icons = [
   },
 ];
 
-const getLevelColor = (level) => {
-  switch (level) {
-    case "Advanced":
-      return "text-green-400";
-    case "Intermediate":
-      return "text-blue-400";
-    case "Beginner":
-      return "text-yellow-400";
-    default:
-      return "text-gray-400";
-  }
-};
+
 
 const Skills = () => {
   return (
