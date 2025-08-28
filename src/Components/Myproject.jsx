@@ -1,5 +1,6 @@
 import React from "react";
-import { Canvas, useLoader } from "@react-three/fiber";
+import { Canvas, useLoader,useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 import { OrbitControls } from "@react-three/drei";
 import { motion } from "framer-motion";
 import * as THREE from "three";
@@ -22,6 +23,7 @@ import M from "../assets/Projectimage/project3h.png"
 
 // ✅ Cube component with images
 const Cube = ({ images }) => {
+  const cubeRef=React.useRef()
   // make sure exactly 6 textures
   const imgs = [...images];
   while (imgs.length < 6) {
@@ -29,17 +31,23 @@ const Cube = ({ images }) => {
   }
 
   const textures = useLoader(THREE.TextureLoader, imgs);
+  useFrame(() => {
+    if (cubeRef.current) {
+      cubeRef.current.rotation.x += 0.01;
+      cubeRef.current.rotation.y += 0.01;
+    }
+  });
 
   return (
-    <mesh rotation={[0.4, 0.2, 0]}>
+    <mesh ref={cubeRef} rotation={[0.4, 0.2, 0]} >
       <boxGeometry args={[4, 4, 4]} />
       {textures.map((tex, i) => (
         <meshStandardMaterial
           key={i}
           attach={`material-${i}`}
           map={tex}
-          emissive={"cream"}
-          emissiveIntensity={0.05}
+         
+          emissiveIntensity={1}
         />
       ))}
     </mesh>
@@ -71,13 +79,13 @@ const projects = [
 // --- Main Component ---
 const MyProject = () => {
   return (
-    <section className="py-20 px-10 bg-gradient-to-b from-black via-gray-900 to-black text-white">
+    <section className="py-10 px-10 bg-black text-white">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-5xl md:w-full w-[300px] font-bold items-center font-black-ops-one-regular text-center mb-12"
+        className="text-2xl md:w-full w-[300px] font-bold items-center font-black-ops-one-regular text-center mb-12"
       >
         {" "}
         My Projects
@@ -93,7 +101,7 @@ const MyProject = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.3 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col"
+            className="bg-[#1a1a1a] rounded-2xl shadow-lg overflow-hidden flex flex-col"
           >
             {/* Cube Visual */}
             <div className="h-64 w-full">
@@ -117,7 +125,7 @@ const MyProject = () => {
                 {project.tech.map((t, idx) => (
                   <span 
                     key={idx}
-                    className="px-3 font-pt-serif-caption-regular py-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full text-sm"
+                    className="px-3 font-pt-serif-caption-regular py-1 bg-gradient-to-r from-red-500 to-gray-500 rounded-full text-sm"
                   >
                     {t}
                   </span>
