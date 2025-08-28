@@ -5,7 +5,7 @@ import Skills from "../Components/Skills";
 const PageC = () => {
   return (
     <>
-    <div className="h-[45rem] px-2 bg-white ">
+    <div className="h-[45rem] px-5 bg-white ">
       
    <Skills/>
       

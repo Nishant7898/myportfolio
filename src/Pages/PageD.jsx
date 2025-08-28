@@ -1,10 +1,10 @@
 import React from 'react';
-import Myproject from '../Components/Myproject';
+import MyExperience from '../Components/Myexperience';
 
 const PageD = () => {
   return (
-    <div  className='h-screen py-5 bg-white px-2'>
-      <Myproject/>
+    <div className='px-5 '>
+      <MyExperience/>
     </div>
   );
 }

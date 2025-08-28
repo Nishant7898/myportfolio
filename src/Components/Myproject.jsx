@@ -1,6 +1,5 @@
 import React from "react";
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
-import { useRef } from "react";
 import { OrbitControls } from "@react-three/drei";
 import { motion } from "framer-motion";
 import * as THREE from "three";
@@ -24,13 +23,12 @@ import M from "../assets/Projectimage/project3h.png";
 // ✅ Cube component with images
 const Cube = ({ images }) => {
   const cubeRef = React.useRef();
-  // make sure exactly 6 textures
   const imgs = [...images];
   while (imgs.length < 6) {
-    imgs.push(images[imgs.length % images.length]); // repeat if less
+    imgs.push(images[imgs.length % images.length]); 
   }
-
   const textures = useLoader(THREE.TextureLoader, imgs);
+
   useFrame(() => {
     if (cubeRef.current) {
       cubeRef.current.rotation.x += 0.01;
@@ -56,48 +54,46 @@ const Cube = ({ images }) => {
 // --- Projects Data ---
 const projects = [
   {
-    title: "Cloth E-commerce-store",
-    description: "A responsive e-commerce app built with React & Tailwind.",
-    tech: ["React", "Tailwind", "Redux", "Stripe"],
-    img: [A, B, C, D, E, F], // ✅ full 6 images
-    link: "gurjar-collection-store.netlify.app",
-  },
-  {
-    title: "Food-Store",
-    description: " Food delivery app with cart & payments.",
-    tech: ["React", "Tailwind"],
-    img: [G, H, I, J], // ✅ will auto-repeat to 6
-    link: "flavoro-food-store.netlify.app",
-  },
-  {
     title: "Weather App",
     description: "Fetches real-time weather using OpenWeather API.",
     tech: ["React", "API", "Tailwind"],
-    img: [K, L, M], // ✅ reuses until 6 faces filled
+    img: [K, L, M],
     link: "weather-api-try.netlify.app",
+  },
+  {
+    title: "Food-Store",
+    description: "Food delivery app with cart & payments.",
+    tech: ["React", "Tailwind"],
+    img: [G, H, I, J],
+    link: "flavoro-food-store.netlify.app",
+  },
+  {
+    title: "Cloth E-commerce-store",
+    description: "A responsive e-commerce app built with React & Tailwind.",
+    tech: ["React", "Tailwind", "Redux", "Stripe"],
+    img: [A, B, C, D, E, F],
+    link: "gurjar-collection-store.netlify.app",
   },
 ];
 
-// --- Main Component ---
 const MyProject = () => {
   return (
     <section
       id="project"
-      className="py-5 px-10 bg-black md:rounded-3xl rounded-3xl  text-white"
+      className="py-10 px-4 sm:px-6 md:px-10 bg-black md:rounded-3xl rounded-3xl text-white"
     >
+      {/* Section Heading */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-2xl md:w-full w-[300px] font-bold items-center font-black-ops-one-regular text-center mb-12"
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-black-ops-one-regular text-center mb-12"
       >
-        {" "}
         My Projects
       </motion.h2>
 
       {/* Responsive Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {projects.map((project, i) => (
           <motion.div
             key={i}
@@ -109,8 +105,8 @@ const MyProject = () => {
             className="bg-[#1a1a1a] rounded-2xl shadow-lg overflow-hidden flex flex-col"
           >
             {/* Cube Visual */}
-            <div className="h-64 w-full">
-              <Canvas>
+            <div className="h-56 sm:h-64 w-full">
+              <Canvas className="!w-full !h-full">
                 <ambientLight />
                 <directionalLight position={[2, 2, 2]} />
                 <Cube images={project.img} />
@@ -119,35 +115,49 @@ const MyProject = () => {
             </div>
 
             {/* Project Info */}
-            <div className="p-6">
-              <h3 className="text-2xl font-iceland font-semibold">
+            <div className="p-4 sm:p-6 flex flex-col flex-grow">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-iceland font-semibold">
                 {project.title}
               </h3>
-              <p className="text-gray-400 font-lexend-exa mt-2">
+              <p className="text-gray-400 font-lexend-exa mt-2 text-sm sm:text-base">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2 mt-3">
                 {project.tech.map((t, idx) => (
                   <span
                     key={idx}
-                    className="px-3 font-pt-serif-caption-regular py-1 bg-gradient-to-r from-red-500 to-gray-500 rounded-full text-sm"
+                    className="px-3 py-1 text-xs sm:text-sm bg-gradient-to-r from-red-500 to-gray-500 rounded-full font-pt-serif-caption-regular"
                   >
                     {t}
                   </span>
                 ))}
               </div>
             </div>
+
+            {/* Button */}
             <a
               href={`https://${project.link}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl w-fit ml-5 font-lexend-exa mb-2 bg-gradient-to-r from-yellow-500 to-indigo-500"
+              className="p-2 sm:p-3 rounded-xl w-fit ml-4 sm:ml-5 mb-3 font-lexend-exa text-sm sm:text-base bg-gradient-to-r from-yellow-500 to-indigo-500"
             >
               View Project
             </a>
           </motion.div>
         ))}
       </div>
+
+      {/* Closing Statement */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="font-lexend-exa py-6 text-gray-400 mt-8 text-center text-sm sm:text-base md:text-lg max-w-3xl mx-auto"
+      >
+        Each project improved my skills and pushed my limits. Today, I can
+        confidently say I am capable of building even better, faster, and more
+        polished solutions.
+      </motion.p>
     </section>
   );
 };
