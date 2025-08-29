@@ -2,8 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const AboutMe = () => {
+  const scrolltocontact=()=>{
+    const contact=document.getElementById("contact");
+    if(contact){
+      contact.scrollIntoView({behavior:"smooth"})
+    }
+  }
   return (
-    <section className="bg-[#0f0f0f] rounded-3xl sm:rounded-3xl md:rounded-[50px] text-white py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-2 md:px-10 lg:px-20">
+    <section id="about" className="bg-[#0f0f0f] rounded-3xl sm:rounded-3xl md:rounded-[50px] text-white py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-2 md:px-10 lg:px-20">
       <div
      
         className="max-w-6xl mx-auto text-center"
@@ -98,7 +104,7 @@ const AboutMe = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="mt-8 sm:mt-10 md:mt-12"
         >
-          <button
+          <button onClick={scrolltocontact}
             className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 
                            text-white px-6 font-lexend-exa sm:px-8 py-2 sm:py-3 rounded-full 
                            text-sm sm:text-base font-medium transition-all duration-300 

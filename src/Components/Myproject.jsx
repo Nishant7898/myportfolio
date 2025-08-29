@@ -102,7 +102,7 @@ const MyProject = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.3 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-[#1a1a1a] rounded-2xl shadow-lg overflow-hidden flex flex-col"
+            className="bg-[#0f0f0f] hover:shadow-yellow-500/40 rounded-2xl shadow-lg overflow-hidden flex flex-col"
           >
             {/* Cube Visual */}
             <div className="h-56 sm:h-64 w-full">

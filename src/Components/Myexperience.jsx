@@ -44,7 +44,7 @@ const MyExperience = () => {
       </motion.h2>
 
       {/* Timeline */}
-      <div className="relative border-l border-gray-600 max-w-3xl mx-auto px-6">
+      <div className="relative border-l border-gray-600 max-w-3xl mx-auto px-3">
         {Experiences.map((exp, i) => (
           <motion.div
             key={i}

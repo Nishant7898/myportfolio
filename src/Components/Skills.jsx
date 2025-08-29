@@ -99,7 +99,7 @@ const icons = [
 
 const Skills = () => {
   return (
-    <div className="bg-black rounded-3xl  sm:rounded-2xl md:rounded-3xl lg:rounded-[50px] px-4 sm:px-6 md:px-10 lg:px-20 py-2 sm:py-8 md:py-12">
+    <div id="skills" className="bg-black rounded-3xl  sm:rounded-2xl md:rounded-3xl lg:rounded-[50px] px-4 sm:px-6 md:px-10 lg:px-20 py-2 sm:py-8 md:py-12">
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ const Skills = () => {
           
           
             className={`bg-[#0f0f0f] border border-gray-800 hover:border-${skill.color}-500/50 
-                       text-white hover:shadow-lg hover:shadow-${skill.color}-500/20 
+                       text-white hover:shadow-lg hover:shadow-${skill.color}-500/40 
                        flex flex-col gap-2 sm:gap-3 md:gap-4 items-center justify-center 
                        rounded-lg sm:rounded-xl md:rounded-2xl 
                        h-[100px] sm:h-[120px] md:h-[140px] lg:h-[160px] 

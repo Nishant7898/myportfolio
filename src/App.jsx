@@ -5,6 +5,9 @@ import PageC from "./Pages/PageC.jsx";
 import PageD from "./Pages/PageD.jsx";
 import Hire from "./Components/Hire";
 import PageE from "./Pages/PageE.jsx";
+import PageF from "./Pages/PageF.jsx";
+import PageG from "./Pages/PageG.jsx";
+import PageH from "./Pages/PageH.jsx";
 
 const App = () => {
   return (
@@ -15,6 +18,9 @@ const App = () => {
       <PageC />
       <PageD/>
       <PageE/>
+      <PageF/>
+      <PageG/>
+      <PageH/>
     </>
   );
 };
